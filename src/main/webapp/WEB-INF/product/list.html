@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div style="display:flex ;justify-content: space-between">
+    <header>
+    <div style="text-align: center; width: 300px" class="mb-3">
+        <form action="products/search" method="post">
+            <label for="name" class="form-label">Search By Name</label>
+            <input style="text-align: center" type="text" class="form-control" id="name"
+                   name="name" required>
+            <button style="margin-top: 6px" class="btn btn-primary" type="submit">Search</button>
+        </form>
+            <div style="margin-top: 20px" class="mb-3">
+                <label class="form-label">Search By Category</label>
+                <label>
+                    <select class="form-select" name="category_id" required >
+                        <option th:each="l : ${list}" th:value="${l.getId()}" th:text="${l.getName()}"
+                                onclick="checkId(this.value)">
+                        </option>
+                    </select>
+                </label>
+            </div>
+    </div>
+    </header>
+</div>
+<h1 style="text-align: center">List Product</h1>
+<a style="margin-left: 1px; margin-top: 30px" class="btn btn-primary" href="/products/create">Create</a>
+<a style="margin-left: 1px; margin-top: 30px" class="btn btn-primary" href="/categories">List Category</a>
+<table style="border-collapse: collapse; border: 1px" class="table table-hover">
+    <tr style="margin-top: 500px">
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Describe</th>
+        <th>Image</th>
+        <th>Category</th>
+        <th colspan="3"></th>
+    </tr>
+<tr th:each="l,lCount : ${listProduct}">
+    <td th:text="${l.getId()}"></td>
+    <td th:text="${l.getName()}"></td>
+    <td th:text="${l.getPrice()}"></td>
+    <td th:text="${l.getDescription()}"></td>
+    <td th:text="${l.getPath()}"></td>
+    <td th:text="${l.getCategory.getName()}"></td>
+    <td><a class="btn btn-warning" th:href="@{/products/{id}/edit(id=${l.getId()})}">edit</a></td>
+    <td><a class="btn btn-danger" onclick="confirmDelete(this)" th:href="@{/products/{id}/delete(id=${l.getId()})}" >delete</a></td>
+    <td><a class="btn btn-danger"  th:href="@{/products/{id}/view(id=${l.getId()})}">view</a></td>
+</tr>
+    <tr><td colspan="9">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item" th:each="pageNum : ${#numbers.sequence(1, result + 1)}">
+                    <a class="page-link" th:href="@{/products/list/{pageNum}/10(pageNum=${pageNum})}" th:text="${pageNum}"></a>
+                </li>
+            </ul>
+        </nav>
+    </td></tr>
+</table>
+</body>
+<script>
+    function checkId(id){
+        var xhr = new XMLHttpRequest(); // Tạo đối tượng XMLHttpRequest
+        xhr.open("POST", "/products/searchByCategory/" + id, true); // Mở kết nối đến URL cần gọi
+        xhr.onreadystatechange
+            // = function () {
+            // if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            // }
+        // }
+        xhr.send(); // Gửi yêu cầu
+    }
+    function confirmDelete(link) {
+    let confirmed = confirm("are you sure");
+    if (confirmed) {
+        let url = link.getAttribute('href');
+        $.ajax({
+            url: url,
+            type: 'POST',
+            success: function(data) {
+                console.log('Dữ liệu nhận được:', data);
+            },
+            error: function(error) {
+                console.error('Lỗi:', error);
+            }
+        });
+    }
+}
+</script>
+</html>
