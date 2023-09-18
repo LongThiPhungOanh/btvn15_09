@@ -3,8 +3,10 @@ import com.example.btvn_15_09.model.Category;
 import com.example.btvn_15_09.service.iml.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @RequestMapping("/categories")
@@ -12,12 +14,20 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping
-    public ModelAndView showList() {
-        ModelAndView modelAndView = new ModelAndView("category/list");
-        modelAndView.addObject("list", categoryService.finAll());
-        return modelAndView;
+    @GetMapping("/category/{pageNum}/{pageSize}")
+    public String showList(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize, Model model) {
+        model.addAttribute("listProduct", categoryService.getPageAll(pageNum, pageSize));
+        float size = categoryService.finAll().size();
+        float result = size / pageSize;
+        model.addAttribute("result", result);
+        model.addAttribute("list", categoryService.finAll());
+        return "category/list";
     }
+//    public ModelAndView showList() {
+//        ModelAndView modelAndView = new ModelAndView("category/list");
+//        modelAndView.addObject("list", categoryService.finAll());
+//        return modelAndView;
+//    }
 
     @GetMapping("/create")
     public ModelAndView showFormCreate() {

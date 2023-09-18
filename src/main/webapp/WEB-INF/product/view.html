@@ -23,8 +23,11 @@
             <td th:text="${product.getName()}"></td>
             <td th:text="${product.getPrice()}"></td>
             <td th:text="${product.getDescription()}"></td>
-            <td th:text="${product.getPath()}"></td>
-            <td th:text="${product.getCategory().getName()()}"></td>
+            <td>
+                <img th:src="@{'/image/' + ${product.getPath()}}" alt="error photo"
+                     style="width: 60px; height: 60px">
+            </td>
+            <td th:text="${product.getCategory().getName()}"></td>
             </tr>
         </table>
         <a class="btn btn-info" href="/products/list/1/10">Back to list</a>

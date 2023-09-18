@@ -1,7 +1,10 @@
 package com.example.btvn_15_09.repository.iml;
 import com.example.btvn_15_09.model.Category;
+import com.example.btvn_15_09.model.Product;
 import com.example.btvn_15_09.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.stereotype.Repository;
@@ -14,6 +17,10 @@ import java.util.Optional;
 public class CategoryRepository {
     @Autowired
     ICategoryRepository categoryRepository;
+    public Page<Category> getProductPage(int pageNumber, int pageSize) {
+        PageRequest pageRequest = PageRequest.of(pageNumber - 1, pageSize);
+        return categoryRepository.findAll(pageRequest);
+    }
     public List<Category> findAll() {
         return (List<Category>) categoryRepository.findAll();
     }

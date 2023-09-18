@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -17,17 +18,41 @@
             <th>Describe</th>
             <th>Image</th>
             <th>Category</th>
+            <th colspan="3"></th>
         </tr>
         <tr th:each="l : ${list1}">
             <td th:text="${l.getId()}"></td>
             <td th:text="${l.getName()}"></td>
             <td th:text="${l.getPrice()}"></td>
             <td th:text="${l.getDescription()}"></td>
-            <td th:text="${l.getPath()}"></td>
-            <td th:text="${l.getCategory().getName()}"></td>
+            <td>
+                <img th:src="@{'/image/' + ${l.getPath()}}" alt="error photo"
+                     style="width: 60px; height: 60px">
+            </td>
+            <td><a class="btn btn-warning" th:href="@{/products/{id}/edit(id=${l.getId()})}">edit</a></td>
+            <td><a class="btn btn-danger" onclick="confirmDelete(this)" th:href="@{/products/{id}/delete(id=${l.getId()})}" >delete</a></td>
+            <td><a class="btn btn-info"  th:href="@{/products/{id}/view(id=${l.getId()})}">view</a></td>
         </tr>
     </table>
 <a class="btn btn-info" href="/products/list/1/10">Back to list</a>
 </div>
 </body>
+<script>
+    function confirmDelete(link) {
+        let confirmed = confirm("are you sure");
+        if (confirmed) {
+            let url = link.getAttribute('href');
+            $.ajax({
+                url: url,
+                type: 'POST',
+                success: function(data) {
+                    console.log('Dữ liệu nhận được:', data);
+                },
+                error: function(error) {
+                    console.error('Lỗi:', error);
+                }
+            });
+        }
+    }
+</script>
 </html>

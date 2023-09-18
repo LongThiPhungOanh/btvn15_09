@@ -121,7 +121,6 @@ public class ProductController {
     }
     @PostMapping("/searchCategory")
     public String searchCategory(Model model,@RequestParam("category_id") Long idCate){
-        //Category c = categoryService.finById(idCate);
             List<Product> list1 = productService.searchByCategory(idCate);
             model.addAttribute("listP", list1);
         return "/product/searchByCate";

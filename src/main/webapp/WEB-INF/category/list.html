@@ -22,10 +22,22 @@
             <td><a class="btn btn-warning"
                    th:href="@{/categories/{id}/edit(id=${l.getId()})}">Edit</a></td>
         </tr>
+        <tr>
+            <td colspan="3">
+            <div style="display: flex; justify-content: flex-end;">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item" th:each="pageNum : ${#numbers.sequence(1, result + 1)}">
+                            <a class="page-link" th:href="@{/categories/category/{pageNum}/10(pageNum=${pageNum})}" th:text="${pageNum}"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </td>
+        </tr>
     </table>
 
     <a class="btn btn-info" href="/products/list/1/10">Back to list</a>
-
 </div>
 </body>
 </html>

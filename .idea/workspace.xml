@@ -4,14 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05136b50-2f70-419f-a7d1-10c14e8a8272" name="Changes" comment="done, searchByCategory chưa hoan thanh">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCate.html" afterDir="false" />
+    <list default="true" id="05136b50-2f70-419f-a7d1-10c14e8a8272" name="Changes" comment="done 100%">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b846fdc-4f62-41a7-aced-b155eea0e12b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b846fdc-4f62-41a7-aced-b155eea0e12b/storage_v2/_src_/schema/btvn15_09.ujnb9A.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b846fdc-4f62-41a7-aced-b155eea0e12b/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b846fdc-4f62-41a7-aced-b155eea0e12b/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b846fdc-4f62-41a7-aced-b155eea0e12b/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b846fdc-4f62-41a7-aced-b155eea0e12b/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/ICategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/ICategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/iml/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/iml/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/category/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCategory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/view.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +101,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;9f1e6ed7a5f393bcfbf7b2ba70dff4bb&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -215,7 +234,8 @@
       <workItem from="1695007009546" duration="18000" />
       <workItem from="1695007031560" duration="41000" />
       <workItem from="1695007538068" duration="4000" />
-      <workItem from="1695008403507" duration="3314000" />
+      <workItem from="1695008403507" duration="3935000" />
+      <workItem from="1695019885533" duration="5585000" />
     </task>
     <task id="LOCAL-00001" summary="done, searchByCategory chưa hoan thanh">
       <option name="closed" value="true" />
@@ -225,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695007065974</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="done 100%">
+      <option name="closed" value="true" />
+      <created>1695011869616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695011869616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +284,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done, searchByCategory chưa hoan thanh" />
-    <option name="LAST_COMMIT_MESSAGE" value="done, searchByCategory chưa hoan thanh" />
+    <MESSAGE value="done 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="done 100%" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/btvn_15_09$Tomcat_9_0_791.ic" NAME="Tomcat 9.0.791 Coverage Results" MODIFIED="1694939529327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

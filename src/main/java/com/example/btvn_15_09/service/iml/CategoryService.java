@@ -1,8 +1,10 @@
 package com.example.btvn_15_09.service.iml;
 import com.example.btvn_15_09.model.Category;
+import com.example.btvn_15_09.model.Product;
 import com.example.btvn_15_09.repository.iml.CategoryRepository;
 import com.example.btvn_15_09.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +13,9 @@ import java.util.List;
 public class CategoryService implements ICategoryService {
 @Autowired
     CategoryRepository categoryRep;
+    public Page<Category> getPageAll(int pageNum, int pageSize){
+        return categoryRep.getProductPage(pageNum, pageSize);
+    }
     @Override
     public List<Category> finAll() {
         return categoryRep.findAll();
