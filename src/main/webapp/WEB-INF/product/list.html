@@ -7,28 +7,62 @@
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-box {
+        text-align: center;
+        width: 300px;
+    }
+</style>
 <body>
-<div style="display:flex ;justify-content: space-between">
-    <header>
-    <div style="text-align: center; width: 300px" class="mb-3">
-        <form action="products/search" method="post">
-            <label for="name" class="form-label">Search By Name</label>
-            <input style="text-align: center" type="text" class="form-control" id="name"
-                   name="name" required>
+<!--<div style="display:flex ;justify-content: space-between">-->
+<!--    <div style="text-align: center; width: 300px" class="mb-3">-->
+<!--        <form action="/products/search" method="post">-->
+<!--            -->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div style="text-align: center; width: 300px" class="mb-3">-->
+<!--    <form action="/products/searchCategory" method="post">-->
+<!--                    <div class="form-group">-->
+<!--                        <label class="form-label">Search By Category</label>-->
+<!--                        <label>-->
+<!--                            <select class="form-select" name="category_id" required>-->
+<!--                                <option th:each="l : ${list}" th:value="${l.getId()}" th:text="${l.getName()}"></option>-->
+<!--                            </select>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--        <button style="margin-top: 6px" class="btn btn-primary" type="submit">Search</button>-->
+<!--    </form>-->
+<!--</div>-->
+
+<div class="container">
+    <div class="search-box">
+        <form action="/products/search" method="post">
+            <div class="form-group">
+                <label for="name" class="form-label">Search By Name</label>
+                <input required style="text-align: center" type="text" class="form-control" id="name" name="name">
+            </div>
             <button style="margin-top: 6px" class="btn btn-primary" type="submit">Search</button>
         </form>
-            <div style="margin-top: 20px" class="mb-3">
+    </div>
+    <div class="search-box">
+        <form action="/products/searchCategory" method="post">
+            <div class="form-group">
                 <label class="form-label">Search By Category</label>
                 <label>
-                    <select class="form-select" name="category_id" required >
-                        <option th:each="l : ${list}" th:value="${l.getId()}" th:text="${l.getName()}"
-                                onclick="checkId(this.value)">
-                        </option>
+                    <select class="form-select" name="category_id" required>
+                        <option th:each="l : ${list}" th:value="${l.getId()}" th:text="${l.getName()}"></option>
                     </select>
                 </label>
             </div>
+            <button style="margin-top: 6px" class="btn btn-primary" type="submit">Search</button>
+        </form>
     </div>
-    </header>
 </div>
 <h1 style="text-align: center">List Product</h1>
 <a style="margin-left: 1px; margin-top: 30px" class="btn btn-primary" href="/products/create">Create</a>
@@ -52,30 +86,22 @@
     <td th:text="${l.getCategory.getName()}"></td>
     <td><a class="btn btn-warning" th:href="@{/products/{id}/edit(id=${l.getId()})}">edit</a></td>
     <td><a class="btn btn-danger" onclick="confirmDelete(this)" th:href="@{/products/{id}/delete(id=${l.getId()})}" >delete</a></td>
-    <td><a class="btn btn-danger"  th:href="@{/products/{id}/view(id=${l.getId()})}">view</a></td>
+    <td><a class="btn btn-info"  th:href="@{/products/{id}/view(id=${l.getId()})}">view</a></td>
 </tr>
     <tr><td colspan="9">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item" th:each="pageNum : ${#numbers.sequence(1, result + 1)}">
-                    <a class="page-link" th:href="@{/products/list/{pageNum}/10(pageNum=${pageNum})}" th:text="${pageNum}"></a>
-                </li>
-            </ul>
-        </nav>
+        <div style="display: flex; justify-content: flex-end;">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item" th:each="pageNum : ${#numbers.sequence(1, result + 1)}">
+                        <a class="page-link" th:href="@{/products/list/{pageNum}/10(pageNum=${pageNum})}" th:text="${pageNum}"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </td></tr>
 </table>
 </body>
 <script>
-    function checkId(id){
-        var xhr = new XMLHttpRequest(); // Tạo đối tượng XMLHttpRequest
-        xhr.open("POST", "/products/searchByCategory/" + id, true); // Mở kết nối đến URL cần gọi
-        xhr.onreadystatechange
-            // = function () {
-            // if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            // }
-        // }
-        xhr.send(); // Gửi yêu cầu
-    }
     function confirmDelete(link) {
     let confirmed = confirm("are you sure");
     if (confirmed) {

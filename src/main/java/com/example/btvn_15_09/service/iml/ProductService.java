@@ -51,11 +51,11 @@ public class ProductService implements IProductService {
         }
         return products1;
     }
-    public List<Product> searchByCategory(Category category){
+    public List<Product> searchByCategory(Long id){
         List<Product> products1 = finAll();
         List<Product> productList = new ArrayList<>();
         for (Product p: products1) {
-            if (p.getCategory().equals(category)){
+            if (p.getCategory().getId().equals(id)){
                 productList.add(p);
             }
         }

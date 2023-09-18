@@ -108,22 +108,22 @@ public class ProductController {
         return "redirect:/products/list/1/10";
     }
     @PostMapping("/search")
-    public String search (@RequestParam String name, Model model){
-        List<Product> list = productService.searchByName(name);
-        model.addAttribute("list", list);
-        return "/product/search";
+    public ModelAndView search (@RequestParam String name) {
+        ModelAndView modelAndView = new ModelAndView("/product/search");
+            List<Product> list = productService.searchByName(name);
+            modelAndView.addObject("list1", list);
+        return modelAndView;
     }
     @GetMapping("/{id}/view")
     public String view (Model model,@PathVariable("id") Long id){
         model.addAttribute("product", productService.finById(id));
         return "/product/view";
     }
-    @PostMapping("/searchByCategory/{id}")
-    public String searchByCategory(Model model,@PathVariable("id") Long id,@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize){
-        if (id != null){
-            Category c = categoryService.finById(id);
-            model.addAttribute("listProduct", productService.searchByCategory(c));
-        }
-        return "/product/searchByCategory";
+    @PostMapping("/searchCategory")
+    public String searchCategory(Model model,@RequestParam("category_id") Long idCate){
+        //Category c = categoryService.finById(idCate);
+            List<Product> list1 = productService.searchByCategory(idCate);
+            model.addAttribute("listP", list1);
+        return "/product/searchByCate";
     }
 }

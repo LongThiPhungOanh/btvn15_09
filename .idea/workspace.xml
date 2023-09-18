@@ -4,43 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05136b50-2f70-419f-a7d1-10c14e8a8272" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/config/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/config/AppInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/ICategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/IProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/iml/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/repository/iml/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/ICategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/IGenericService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/upload.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/category/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/category/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/category/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/default.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCategory.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/image/com-nam-onigiri-anime.jpg" afterDir="false" />
+    <list default="true" id="05136b50-2f70-419f-a7d1-10c14e8a8272" name="Changes" comment="done, searchByCategory chưa hoan thanh">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/btvn_15_09/service/iml/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/searchByCategory.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +106,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.791" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.791" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/products/1/10" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/products/list/1/10" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.example : btvn_15_09-1.0-SNAPSHOT.war (exploded)">
@@ -242,7 +213,19 @@
       <workItem from="1694954935604" duration="6599000" />
       <workItem from="1695003273550" duration="3149000" />
       <workItem from="1695007009546" duration="18000" />
+      <workItem from="1695007031560" duration="41000" />
+      <workItem from="1695007538068" duration="4000" />
+      <workItem from="1695008403507" duration="3314000" />
     </task>
+    <task id="LOCAL-00001" summary="done, searchByCategory chưa hoan thanh">
+      <option name="closed" value="true" />
+      <created>1695007065974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695007065974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +253,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="done, searchByCategory chưa hoan thanh" />
+    <option name="LAST_COMMIT_MESSAGE" value="done, searchByCategory chưa hoan thanh" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/btvn_15_09$Tomcat_9_0_791.ic" NAME="Tomcat 9.0.791 Coverage Results" MODIFIED="1694939529327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
